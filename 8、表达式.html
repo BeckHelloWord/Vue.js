@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>8、表达式</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--8-->
+    <span>{{x+2}}</span>
+    <!--x大于5显示x,否则为0-->
+    <span>{{x>5?x:0}}</span>
+    <!--!dlorw,olleh-->
+    <span>{{mess.split('').reverse().join('')}}</span>
+</div>
+</body>
+<script>
+    var obj = new Vue({
+        el: '#app',
+        data: {
+            x: 6,
+            mess:'hello,wrold!'
+        }
+    })
+</script>
+</html>

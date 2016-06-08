@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>3、渲染列表</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<ul id="app">
+    <li v-for="val in list">
+        {{ val.name }}
+    </li>
+</ul>
+</body>
+<script>
+    new Vue({
+        el: '#app',
+        data: {
+            list: [
+                {name: 'beck'},
+                {name: 'xiaohong'},
+                {name: 'xiaoming'}
+            ]
+        }
+    })
+</script>
+</html>

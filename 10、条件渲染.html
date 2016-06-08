@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>10、条件渲染</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--为true显示A，为false显示B-->
+    <p v-if="ok">A</p>
+    <p v-else>B</p>
+</div>
+</body>
+<script>
+    var obj = new Vue({
+        el: '#app',
+        data: {
+            ok: false
+        }
+    })
+</script>
+</html>

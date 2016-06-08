@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>15、组件</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <my-template></my-template>
+    </div>
+</body>
+    <script>
+        var myTemplate = Vue.extend({
+            template: '<p>hello,world!</p>'
+        });
+
+        Vue.component('my-template', myTemplate);
+
+        new Vue({
+            el: '#app'
+        })
+    </script>
+</html>

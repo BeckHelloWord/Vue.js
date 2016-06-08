@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>12、v-show</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <p v-show="show">v-show</p>
+    </div>
+</body>
+<script>
+    var obj = new Vue({
+        el: '#app',
+        data: {
+            show:true
+        }
+    })
+</script>
+</html>

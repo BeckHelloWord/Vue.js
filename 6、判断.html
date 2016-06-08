@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6、判断</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <p v-if="flg">{{message}}</p>
+    <p v-if="flg">Hello,World!</p>
+    <p></p>
+</div>
+</body>
+<script>
+    var obj = new Vue({
+        el: '#app',
+        data: {
+            message: 'Hello,Beck!',
+            flg: true
+        }
+    })
+</script>
+</html>

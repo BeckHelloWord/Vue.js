@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>11、template判断</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+    <div id="app">
+        <template v-if="ok">
+            <h2>标题</h2>
+            <p>Hello,Word!</p>
+            <input type="text" />
+        </template>
+    </div>
+</body>
+<script>
+    var obj=new Vue({
+        el:'#app',
+        data:{
+            ok:false
+        }
+    })
+</script>
+</html>

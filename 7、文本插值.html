@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7、文本插值</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app">
+    <!--单次更新，即页面渲染时。今后msg值发生变化也不会更新-->
+    <span>姓名：{{*msg}}</span>
+    <!--age值变化就更你想呢-->
+    <span>年龄：{{age}}</span>
+</div>
+</body>
+<script>
+    var obj = new Vue({
+        el: '#app',
+        data: {
+            msg: 'beck',
+            age: 27
+        }
+    })
+</script>
+</html>

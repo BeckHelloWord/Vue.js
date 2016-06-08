@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>14、class与style绑定-对象写法</title>
+    <style type="text/css">
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        .box {
+            width: 200px;
+            height: 200px;
+            margin: 50px auto;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .green {
+            background: green;
+        }
+    </style>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div id="app" v-bind:class="options"></div>
+</body>
+<script>
+    var redBox = new Vue({
+        el: '#app',
+        data: {
+            options: {
+                box: true,
+                red: true,
+                green: false
+            }
+        }
+    })
+</script>
+</html>

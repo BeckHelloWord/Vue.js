@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>13、列表渲染(v-for)</title>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<ul id="app">
+    <li v-for="val in items">
+        {{val.name}}
+    </li>
+</ul>
+</body>
+<script>
+    var obj = new Vue({
+        el: '#app',
+        data: {
+            items: [
+                {name: 'beck'},
+                {name: 'wei'}
+            ]
+        }
+    })
+</script>
+</html>

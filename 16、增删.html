@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>16、增删</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font: 14px/1.7 '微软雅黑';
+        }
+
+        .list {
+            width: 800px;
+            padding: 10px;
+            margin: 100px auto;
+        }
+
+        .list h4 {
+            margin: 20px 0;
+            padding: 10px 0;
+            font-size:16px;
+            border-bottom: 1px solid #999;
+        }
+
+        .list table {
+            width: 100%;
+            border: 1px dashed #999;
+            border-collapse: collapse;
+            text-align: center;
+        }
+
+        .list table tr {
+            background: #fbefc7;
+        }
+
+        .list table tr:nth-child(2n) {
+            background: #e5edcb;
+        }
+
+        .list table tr:first-child {
+            background: #fff;
+        }
+
+        .list table tr th {
+            padding: 15px 0;
+            font-size: 16px;
+        }
+
+        .list table tr td {
+            width: 25%;
+            border: 1px dashed #999;
+            padding: 10px 0;
+        }
+
+        .list .addBook {
+        }
+        .list .addBook div{
+            margin-bottom: 15px;
+        }
+        .list .addBook p{
+            padding:5px 0;
+            font-weight: 700;
+        }
+        .list .addBook input {
+            box-sizing: border-box;
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #999;
+            border-radius: 5px;
+            outline:none;
+        }
+        .list .addBook input[type='button']{
+            font-size:14px;
+            font-weight: 700;
+            border:none;
+            color:#666;
+        }
+    </style>
+    <script src="./js/vue.js"></script>
+</head>
+<body>
+<div class="list" id="app">
+    <table>
+        <tr>
+            <th>序号</th>
+            <th>书名</th>
+            <th>作者</th>
+            <th>价格</th>
+        </tr>
+        <tr v-for="val in items">
+            <td>{{val.id}}</td>
+            <td>{{val.bookName}}</td>
+            <td>{{val.bookAuthor}}</td>
+            <td>{{val.money}}</td>
+        </tr>
+    </table>
+    <h4>添加书籍</h4>
+    <div class="addBook">
+        <div>
+            <p>书名:</p>
+            <input type="text" v-model="name"/>
+        </div>
+        <div>
+            <p>作者:</p>
+            <input type="text" v-model="author"/>
+        </div>
+        <div>
+            <p>价格:</p>
+            <input type="text" v-model="money"/>
+        </div>
+        <input type="button" value="添加" v-on:click="add"/>
+    </div>
+</div>
+</body>
+<script>
+    var app = new Vue({
+        el: '#app',
+        data: {
+            items: [
+                {id: 1, bookName: '遮天', bookAuthor: '辰东', money: '18.00'},
+                {id: 2, bookName: '斗破苍穹', bookAuthor: '番茄土豆', money: '22.00'},
+                {id: 2, bookName: '斗破苍穹', bookAuthor: '番茄土豆', money: '22.00'},
+            ]
+        },
+        methods:{
+            add:function(){
+                
+            }
+        }
+    })
+</script>
+</html>
