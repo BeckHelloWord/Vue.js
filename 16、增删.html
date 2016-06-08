@@ -22,7 +22,7 @@
         .list h4 {
             margin: 20px 0;
             padding: 10px 0;
-            font-size:16px;
+            font-size: 16px;
             border-bottom: 1px solid #999;
         }
 
@@ -58,26 +58,30 @@
 
         .list .addBook {
         }
-        .list .addBook div{
+
+        .list .addBook div {
             margin-bottom: 15px;
         }
-        .list .addBook p{
-            padding:5px 0;
+
+        .list .addBook p {
+            padding: 5px 0;
             font-weight: 700;
         }
+
         .list .addBook input {
             box-sizing: border-box;
             width: 100%;
             padding: 10px;
             border: 1px solid #999;
             border-radius: 5px;
-            outline:none;
+            outline: none;
         }
-        .list .addBook input[type='button']{
-            font-size:14px;
+
+        .list .addBook input[type='button'] {
+            font-size: 14px;
             font-weight: 700;
-            border:none;
-            color:#666;
+            border: none;
+            color: #666;
         }
     </style>
     <script src="./js/vue.js"></script>
@@ -120,15 +124,30 @@
     var app = new Vue({
         el: '#app',
         data: {
+            id: '',
+            name: '',
+            author: '',
+            money: '',
             items: [
                 {id: 1, bookName: '遮天', bookAuthor: '辰东', money: '18.00'},
-                {id: 2, bookName: '斗破苍穹', bookAuthor: '番茄土豆', money: '22.00'},
-                {id: 2, bookName: '斗破苍穹', bookAuthor: '番茄土豆', money: '22.00'},
+                {id: 2, bookName: '斗破苍穹', bookAuthor: '番茄土豆', money: '22.00'}
             ]
         },
-        methods:{
-            add:function(){
-                
+        methods: {
+            add: function () {
+                var addBook = {};
+                addBook.id = this.items.length + 1;
+                addBook.bookName = this.name;
+                addBook.bookAuthor = this.author;
+                addBook.money = this.money;
+                this.items.push(addBook);
+                this.clear();
+            },
+            clear:function () {
+                this.id='';
+                this.name='';
+                this.author='';
+                this.money='';
             }
         }
     })
