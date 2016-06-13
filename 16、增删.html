@@ -12,7 +12,9 @@
         body {
             font: 14px/1.7 '微软雅黑';
         }
-
+        th,tr,td{
+            border:1px dashed #999;
+        }
         .list {
             width: 800px;
             padding: 10px;
@@ -28,7 +30,6 @@
 
         .list table {
             width: 100%;
-            border: 1px dashed #999;
             border-collapse: collapse;
             text-align: center;
         }
@@ -52,7 +53,6 @@
 
         .list table tr td {
             width: 23%;
-            border: 1px dashed #999;
             padding: 10px 0;
         }
 
@@ -100,6 +100,7 @@
         }
     </style>
     <script src="//cdn.bootcss.com/jquery/1.10.0/jquery.min.js"></script>
+    <script src="./js/Validform_v5.3.2.js"></script>
     <script src="./js/vue.js"></script>
 </head>
 <body>
@@ -124,22 +125,23 @@
     </table>
     <h4>添加书籍</h4>
     <div id="addBook" class="addBook">
-        <div>
-            <p>书名:</p>
-            <input type="text" v-model="name"/>
-            <span class="error">*不能为空!</span>
-        </div>
-        <div>
-            <p>作者:</p>
-            <input type="text" v-model="author"/>
-            <span class="error">*不能为空!</span>
-        </div>
-        <div>
-            <p>价格:</p>
-            <input type="text" v-model="money"/>
-            <span class="error">*不能为空!</span>
-        </div>
-        <input type="button" value="添加" v-on:click="add"/>
+        <form id="formCon" class="formCon" >
+            <div>
+                <p>书名:</p>
+                <input type="text" v-model="name"/>
+                <span class="error"></span>
+            </div>
+            <div>
+                <p>作者:</p>
+                <input type="text" v-model="author" datatype="*"/>
+                <span class="Validform_checktip"></span>
+            </div>
+            <div>
+                <p>价格:</p>
+                <input type="text" v-model="money" datatype="*"/>
+            </div>
+            <input type="button" value="添加" v-on:click="add"/>
+        </form>
     </div>
 </div>
 </body>
@@ -158,6 +160,10 @@
         },
         methods: {
             add: function () {
+                $('.formCon').Validform({
+                    label:'.error',
+                    tiptype:1
+                });
                 if(this.checkout()){
                     var addBook = {};
                     addBook.id = this.items.length + 1;
@@ -189,6 +195,7 @@
                 return true;
             }
         }
-    })
+    });
+
 </script>
 </html>
